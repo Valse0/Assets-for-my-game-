@@ -6,6 +6,8 @@ import { BossExactSection } from './components/BossExactSection';
 import { RefinedComparisonSection } from './components/RefinedComparisonSection';
 import { SpriteSheetStrip } from './components/SpriteSheetStrip';
 import { SurvivorsArena } from './components/SurvivorsArena';
+import { V2GroupASection } from './components/V2GroupASection';
+import { V2GroupBCSection } from './components/V2GroupBCSection';
 import { AtlasFile, BgMode, SheetSpec } from './types/sprites';
 
 const DEFAULT_PALETTES = {
@@ -168,28 +170,28 @@ export default function App() {
 
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-[#94A3B8]">
             <a
-              href="#sheets"
+              href="#v2-group-a"
               className="hover:text-[#F8FAFC] transition-colors whitespace-nowrap shrink-0"
             >
-              Sprite Sheets
+              v2 Group A
+            </a>
+            <a
+              href="#v2-group-bc"
+              className="hover:text-[#F8FAFC] transition-colors whitespace-nowrap shrink-0"
+            >
+              v2 Groups B–C
+            </a>
+            <a
+              href="#boss-exact"
+              className="hover:text-[#F8FAFC] transition-colors whitespace-nowrap shrink-0"
+            >
+              Boss 96×96
             </a>
             <a
               href="#refined"
               className="hover:text-[#F8FAFC] transition-colors whitespace-nowrap shrink-0"
             >
               Refined Phase 1
-            </a>
-            <a
-              href="#packs"
-              className="hover:text-[#F8FAFC] transition-colors whitespace-nowrap shrink-0"
-            >
-              Groups 1–5
-            </a>
-            <a
-              href="#animator"
-              className="hover:text-[#F8FAFC] transition-colors whitespace-nowrap shrink-0"
-            >
-              Animator
             </a>
             <a
               href="#arena"
@@ -367,7 +369,23 @@ export default function App() {
           </div>
         </section>
 
-        {/* Boss Mutant Brute — 96x96 Exact Reference Match */}
+        {/* assets/v2 — Group A: Zombie Attack Sprite Sheets */}
+        <V2GroupASection
+          zoom={zoom}
+          bgMode={bgMode}
+          showGrid={showGrid}
+          showBaseline={showBaseline}
+        />
+
+        {/* assets/v2 — Groups B & C: World Props, Effects, Shoot & Pickups */}
+        <V2GroupBCSection
+          zoom={zoom}
+          bgMode={bgMode}
+          showGrid={showGrid}
+          showBaseline={showBaseline}
+        />
+
+        {/* Boss Mutant Brute — 96x96 Exact Reference Match (Static + Animated) */}
         <BossExactSection
           zoom={zoom}
           bgMode={bgMode}
