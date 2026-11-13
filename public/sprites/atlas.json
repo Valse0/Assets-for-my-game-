@@ -1,0 +1,344 @@
+{
+  "meta": {
+    "frameSize": {
+      "w": 64,
+      "h": 64
+    },
+    "footBaselineY": 58,
+    "antiAliasing": false,
+    "gradients": false,
+    "transparentBackground": true,
+    "perspective": "3/4 top-down",
+    "style": "16-bit bold dark outline"
+  },
+  "sheets": {
+    "survivor": {
+      "file": "survivor_spritesheet.png",
+      "size": {
+        "w": 576,
+        "h": 64
+      },
+      "columns": 9,
+      "rows": 1,
+      "animations": {
+        "walk": {
+          "startFrame": 0,
+          "count": 4,
+          "fps": 10,
+          "loop": true
+        },
+        "hurt": {
+          "startFrame": 4,
+          "count": 1,
+          "fps": 8,
+          "loop": false
+        },
+        "death": {
+          "startFrame": 5,
+          "count": 4,
+          "fps": 8,
+          "loop": false
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "walk_0",
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 22,
+            "minY": 19,
+            "maxX": 42,
+            "maxY": 58,
+            "width": 21,
+            "height": 40
+          }
+        },
+        {
+          "index": 1,
+          "name": "walk_1",
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 22,
+            "minY": 20,
+            "maxX": 42,
+            "maxY": 58,
+            "width": 21,
+            "height": 39
+          }
+        },
+        {
+          "index": 2,
+          "name": "walk_2",
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 22,
+            "minY": 19,
+            "maxX": 42,
+            "maxY": 58,
+            "width": 21,
+            "height": 40
+          }
+        },
+        {
+          "index": 3,
+          "name": "walk_3",
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 22,
+            "minY": 18,
+            "maxX": 42,
+            "maxY": 58,
+            "width": 21,
+            "height": 41
+          }
+        },
+        {
+          "index": 4,
+          "name": "hurt_0",
+          "x": 256,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 18,
+            "minY": 19,
+            "maxX": 40,
+            "maxY": 58,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "index": 5,
+          "name": "death_0",
+          "x": 320,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 17,
+            "minY": 24,
+            "maxX": 39,
+            "maxY": 58,
+            "width": 23,
+            "height": 35
+          }
+        },
+        {
+          "index": 6,
+          "name": "death_1",
+          "x": 384,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 16,
+            "minY": 33,
+            "maxX": 37,
+            "maxY": 58,
+            "width": 22,
+            "height": 26
+          }
+        },
+        {
+          "index": 7,
+          "name": "death_2",
+          "x": 448,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 13,
+            "minY": 42,
+            "maxX": 46,
+            "maxY": 58,
+            "width": 34,
+            "height": 17
+          }
+        },
+        {
+          "index": 8,
+          "name": "death_3",
+          "x": 512,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 10,
+            "minY": 46,
+            "maxX": 53,
+            "maxY": 58,
+            "width": 44,
+            "height": 13
+          }
+        }
+      ]
+    },
+    "walkerZombie": {
+      "file": "walker_zombie_spritesheet.png",
+      "size": {
+        "w": 512,
+        "h": 64
+      },
+      "columns": 8,
+      "rows": 1,
+      "animations": {
+        "walk": {
+          "startFrame": 0,
+          "count": 4,
+          "fps": 7,
+          "loop": true
+        },
+        "death": {
+          "startFrame": 4,
+          "count": 4,
+          "fps": 8,
+          "loop": false
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "walk_0",
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 13,
+            "minY": 10,
+            "maxX": 48,
+            "maxY": 58,
+            "width": 36,
+            "height": 49
+          }
+        },
+        {
+          "index": 1,
+          "name": "walk_1",
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 15,
+            "minY": 11,
+            "maxX": 44,
+            "maxY": 58,
+            "width": 30,
+            "height": 48
+          }
+        },
+        {
+          "index": 2,
+          "name": "walk_2",
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 16,
+            "minY": 10,
+            "maxX": 44,
+            "maxY": 58,
+            "width": 29,
+            "height": 49
+          }
+        },
+        {
+          "index": 3,
+          "name": "walk_3",
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 15,
+            "minY": 9,
+            "maxX": 48,
+            "maxY": 58,
+            "width": 34,
+            "height": 50
+          }
+        },
+        {
+          "index": 4,
+          "name": "death_0",
+          "x": 256,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 13,
+            "minY": 18,
+            "maxX": 49,
+            "maxY": 58,
+            "width": 37,
+            "height": 41
+          }
+        },
+        {
+          "index": 5,
+          "name": "death_1",
+          "x": 320,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 13,
+            "minY": 28,
+            "maxX": 47,
+            "maxY": 58,
+            "width": 35,
+            "height": 31
+          }
+        },
+        {
+          "index": 6,
+          "name": "death_2",
+          "x": 384,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 12,
+            "minY": 44,
+            "maxX": 51,
+            "maxY": 58,
+            "width": 40,
+            "height": 15
+          }
+        },
+        {
+          "index": 7,
+          "name": "death_3",
+          "x": 448,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 9,
+            "minY": 46,
+            "maxX": 55,
+            "maxY": 58,
+            "width": 47,
+            "height": 13
+          }
+        }
+      ]
+    }
+  }
+}

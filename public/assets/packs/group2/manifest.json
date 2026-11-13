@@ -1,0 +1,465 @@
+{
+  "group": 2,
+  "name": "Combat Effects & XP Gems",
+  "style": "16-bit bold dark outline, transparent RGBA, no AA, no gradients",
+  "assets": [
+    {
+      "id": "muzzle_flash",
+      "title": "Muzzle Flash",
+      "file": "muzzle_flash_spritesheet.png",
+      "frameSize": {
+        "w": 32,
+        "h": 32
+      },
+      "frameCount": 3,
+      "sheetSize": {
+        "w": 96,
+        "h": 32
+      },
+      "animations": {
+        "burst": {
+          "startFrame": 0,
+          "count": 3,
+          "fps": 18,
+          "loop": false
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "flash_0",
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 3,
+            "minY": 8,
+            "maxX": 25,
+            "maxY": 22,
+            "width": 23,
+            "height": 15
+          }
+        },
+        {
+          "index": 1,
+          "name": "flash_1",
+          "x": 32,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 2,
+            "minY": 7,
+            "maxX": 29,
+            "maxY": 24,
+            "width": 28,
+            "height": 18
+          }
+        },
+        {
+          "index": 2,
+          "name": "flash_2",
+          "x": 64,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 4,
+            "minY": 8,
+            "maxX": 28,
+            "maxY": 22,
+            "width": 25,
+            "height": 15
+          }
+        }
+      ]
+    },
+    {
+      "id": "bullet",
+      "title": "Bullet Tracer",
+      "file": "bullet_spritesheet.png",
+      "frameSize": {
+        "w": 32,
+        "h": 16
+      },
+      "frameCount": 3,
+      "sheetSize": {
+        "w": 96,
+        "h": 16
+      },
+      "animations": {
+        "fly": {
+          "startFrame": 0,
+          "count": 3,
+          "fps": 16,
+          "loop": true
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "bullet_0",
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 16,
+          "bounds": {
+            "minX": 5,
+            "minY": 4,
+            "maxX": 23,
+            "maxY": 11,
+            "width": 19,
+            "height": 8
+          }
+        },
+        {
+          "index": 1,
+          "name": "bullet_1",
+          "x": 32,
+          "y": 0,
+          "w": 32,
+          "h": 16,
+          "bounds": {
+            "minX": 5,
+            "minY": 4,
+            "maxX": 26,
+            "maxY": 11,
+            "width": 22,
+            "height": 8
+          }
+        },
+        {
+          "index": 2,
+          "name": "bullet_2",
+          "x": 64,
+          "y": 0,
+          "w": 32,
+          "h": 16,
+          "bounds": {
+            "minX": 6,
+            "minY": 4,
+            "maxX": 27,
+            "maxY": 11,
+            "width": 22,
+            "height": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "acid_spit",
+      "title": "Acid Spit & Splash",
+      "file": "acid_spit_spritesheet.png",
+      "frameSize": {
+        "w": 32,
+        "h": 32
+      },
+      "frameCount": 4,
+      "sheetSize": {
+        "w": 128,
+        "h": 32
+      },
+      "animations": {
+        "fly": {
+          "startFrame": 0,
+          "count": 2,
+          "fps": 12,
+          "loop": true
+        },
+        "splash": {
+          "startFrame": 2,
+          "count": 2,
+          "fps": 12,
+          "loop": false
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "spit_fly_0",
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 4,
+            "minY": 11,
+            "maxX": 24,
+            "maxY": 19,
+            "width": 21,
+            "height": 9
+          }
+        },
+        {
+          "index": 1,
+          "name": "spit_fly_1",
+          "x": 32,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 4,
+            "minY": 11,
+            "maxX": 25,
+            "maxY": 19,
+            "width": 22,
+            "height": 9
+          }
+        },
+        {
+          "index": 2,
+          "name": "spit_splash_0",
+          "x": 64,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 3,
+            "minY": 9,
+            "maxX": 28,
+            "maxY": 22,
+            "width": 26,
+            "height": 14
+          }
+        },
+        {
+          "index": 3,
+          "name": "spit_splash_1",
+          "x": 96,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 3,
+            "minY": 10,
+            "maxX": 28,
+            "maxY": 21,
+            "width": 26,
+            "height": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "hit_spark",
+      "title": "Hit Impact Spark",
+      "file": "hit_spark_spritesheet.png",
+      "frameSize": {
+        "w": 32,
+        "h": 32
+      },
+      "frameCount": 4,
+      "sheetSize": {
+        "w": 128,
+        "h": 32
+      },
+      "animations": {
+        "impact": {
+          "startFrame": 0,
+          "count": 4,
+          "fps": 18,
+          "loop": false
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "spark_0",
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 6,
+            "minY": 9,
+            "maxX": 25,
+            "maxY": 21,
+            "width": 20,
+            "height": 13
+          }
+        },
+        {
+          "index": 1,
+          "name": "spark_1",
+          "x": 32,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 5,
+            "minY": 8,
+            "maxX": 26,
+            "maxY": 22,
+            "width": 22,
+            "height": 15
+          }
+        },
+        {
+          "index": 2,
+          "name": "spark_2",
+          "x": 64,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 6,
+            "minY": 9,
+            "maxX": 25,
+            "maxY": 21,
+            "width": 20,
+            "height": 13
+          }
+        },
+        {
+          "index": 3,
+          "name": "spark_3",
+          "x": 96,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 5,
+            "minY": 10,
+            "maxX": 26,
+            "maxY": 20,
+            "width": 22,
+            "height": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": "xp_gems",
+      "title": "XP Gems (Blue, Green, Gold)",
+      "file": "xp_gems_spritesheet.png",
+      "frameSize": {
+        "w": 24,
+        "h": 24
+      },
+      "frameCount": 6,
+      "sheetSize": {
+        "w": 144,
+        "h": 24
+      },
+      "animations": {
+        "tier1_blue": {
+          "startFrame": 0,
+          "count": 2,
+          "fps": 4,
+          "loop": true
+        },
+        "tier2_green": {
+          "startFrame": 2,
+          "count": 2,
+          "fps": 4,
+          "loop": true
+        },
+        "tier3_gold": {
+          "startFrame": 4,
+          "count": 2,
+          "fps": 4,
+          "loop": true
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "gem_blue_0",
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 5,
+            "minY": 5,
+            "maxX": 18,
+            "maxY": 18,
+            "width": 14,
+            "height": 14
+          }
+        },
+        {
+          "index": 1,
+          "name": "gem_blue_1",
+          "x": 24,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 5,
+            "minY": 5,
+            "maxX": 18,
+            "maxY": 18,
+            "width": 14,
+            "height": 14
+          }
+        },
+        {
+          "index": 2,
+          "name": "gem_green_0",
+          "x": 48,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 5,
+            "minY": 5,
+            "maxX": 18,
+            "maxY": 18,
+            "width": 14,
+            "height": 14
+          }
+        },
+        {
+          "index": 3,
+          "name": "gem_green_1",
+          "x": 72,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 5,
+            "minY": 5,
+            "maxX": 18,
+            "maxY": 18,
+            "width": 14,
+            "height": 14
+          }
+        },
+        {
+          "index": 4,
+          "name": "gem_gold_0",
+          "x": 96,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 5,
+            "minY": 5,
+            "maxX": 18,
+            "maxY": 18,
+            "width": 14,
+            "height": 14
+          }
+        },
+        {
+          "index": 5,
+          "name": "gem_gold_1",
+          "x": 120,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 5,
+            "minY": 5,
+            "maxX": 18,
+            "maxY": 18,
+            "width": 14,
+            "height": 14
+          }
+        }
+      ]
+    }
+  ]
+}

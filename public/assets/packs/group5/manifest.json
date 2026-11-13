@@ -1,0 +1,111 @@
+{
+  "group": 5,
+  "name": "16-Bit Chiptune Music & Retro Sound Effects",
+  "format": "PCM WAV (44.1 kHz, 16-bit Mono)",
+  "assets": [
+    {
+      "id": "bgm_loop",
+      "title": "Survivors 16-Bit Action Theme (Loop)",
+      "file": "bgm_survivors_loop.wav",
+      "kind": "music",
+      "loop": true,
+      "sampleRate": 44100,
+      "channels": 1,
+      "bitDepth": 16,
+      "durationSec": 8,
+      "frameSize": null,
+      "frameCount": 1
+    },
+    {
+      "id": "sfx_gunshot",
+      "title": "Gunshot Fire",
+      "file": "sfx_gunshot.wav",
+      "kind": "sfx",
+      "loop": false,
+      "sampleRate": 44100,
+      "channels": 1,
+      "bitDepth": 16,
+      "durationSec": 0.14,
+      "frameSize": null,
+      "frameCount": 1
+    },
+    {
+      "id": "sfx_hit",
+      "title": "Bullet Hit Spark",
+      "file": "sfx_hit_spark.wav",
+      "kind": "sfx",
+      "loop": false,
+      "sampleRate": 44100,
+      "channels": 1,
+      "bitDepth": 16,
+      "durationSec": 0.1,
+      "frameSize": null,
+      "frameCount": 1
+    },
+    {
+      "id": "sfx_zombie_death",
+      "title": "Zombie Defeat",
+      "file": "sfx_zombie_death.wav",
+      "kind": "sfx",
+      "loop": false,
+      "sampleRate": 44100,
+      "channels": 1,
+      "bitDepth": 16,
+      "durationSec": 0.3,
+      "frameSize": null,
+      "frameCount": 1
+    },
+    {
+      "id": "sfx_xp_gem",
+      "title": "XP Gem Pickup",
+      "file": "sfx_xp_gem.wav",
+      "kind": "sfx",
+      "loop": false,
+      "sampleRate": 44100,
+      "channels": 1,
+      "bitDepth": 16,
+      "durationSec": 0.12,
+      "frameSize": null,
+      "frameCount": 1
+    },
+    {
+      "id": "sfx_level_up",
+      "title": "Level Up Fanfare",
+      "file": "sfx_level_up.wav",
+      "kind": "sfx",
+      "loop": false,
+      "sampleRate": 44100,
+      "channels": 1,
+      "bitDepth": 16,
+      "durationSec": 0.58,
+      "frameSize": null,
+      "frameCount": 1
+    },
+    {
+      "id": "sfx_player_hurt",
+      "title": "Survivor Hurt",
+      "file": "sfx_player_hurt.wav",
+      "kind": "sfx",
+      "loop": false,
+      "sampleRate": 44100,
+      "channels": 1,
+      "bitDepth": 16,
+      "durationSec": 0.18,
+      "frameSize": null,
+      "frameCount": 1
+    },
+    {
+      "id": "sfx_ui_click",
+      "title": "UI Button Click",
+      "file": "sfx_ui_click.wav",
+      "kind": "sfx",
+      "loop": false,
+      "sampleRate": 44100,
+      "channels": 1,
+      "bitDepth": 16,
+      "durationSec": 0.06,
+      "frameSize": null,
+      "frameCount": 1
+    }
+  ]
+}

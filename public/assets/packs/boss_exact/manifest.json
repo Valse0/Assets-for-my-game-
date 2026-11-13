@@ -1,0 +1,62 @@
+{
+  "pack": "boss_exact",
+  "name": "Boss Mutant Brute (Exact Reference Match)",
+  "style": "16-bit pixel art matching reference proportions, palette, 1px #0A090D outline, sharp pixels, transparent RGBA, zero soft shadows",
+  "assets": [
+    {
+      "id": "boss_mutant_brute",
+      "title": "Boss Mutant Brute (96×96 Exact Reference)",
+      "file": "boss_mutant_brute_96x96.png",
+      "frameSize": {
+        "w": 96,
+        "h": 96
+      },
+      "frameCount": 1,
+      "sheetSize": {
+        "w": 96,
+        "h": 96
+      },
+      "footBaselineY": 78,
+      "paletteCount": 19,
+      "palette": [
+        "#0a090d",
+        "#f6f2ec",
+        "#d0c2c2",
+        "#dac6c0",
+        "#a28286",
+        "#c4a8a4",
+        "#74141c",
+        "#7c5a66",
+        "#ac2020",
+        "#583c4a",
+        "#da382c",
+        "#f89262",
+        "#1e161e",
+        "#7c4422",
+        "#1a2236",
+        "#ba6a2c",
+        "#2c3a56",
+        "#425676",
+        "#f0b234"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "name": "idle_ref_0",
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 10,
+            "minY": 17,
+            "maxX": 85,
+            "maxY": 78,
+            "width": 76,
+            "height": 62
+          }
+        }
+      ]
+    }
+  ]
+}

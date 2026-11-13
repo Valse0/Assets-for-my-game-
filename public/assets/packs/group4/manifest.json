@@ -1,0 +1,207 @@
+{
+  "group": 4,
+  "name": "UI Icons (Upgrade Cards, Pause, Gold Coin)",
+  "style": "16-bit bold dark outline, transparent RGBA, no AA, no gradients",
+  "assets": [
+    {
+      "id": "ui_upgrade_cards",
+      "title": "Upgrade Selection Cards",
+      "file": "ui_upgrade_cards_spritesheet.png",
+      "frameSize": {
+        "w": 48,
+        "h": 64
+      },
+      "frameCount": 3,
+      "sheetSize": {
+        "w": 144,
+        "h": 64
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "card_weapon",
+          "x": 0,
+          "y": 0,
+          "w": 48,
+          "h": 64,
+          "bounds": {
+            "minX": 3,
+            "minY": 3,
+            "maxX": 44,
+            "maxY": 60,
+            "width": 42,
+            "height": 58
+          }
+        },
+        {
+          "index": 1,
+          "name": "card_passive",
+          "x": 48,
+          "y": 0,
+          "w": 48,
+          "h": 64,
+          "bounds": {
+            "minX": 3,
+            "minY": 3,
+            "maxX": 44,
+            "maxY": 60,
+            "width": 42,
+            "height": 58
+          }
+        },
+        {
+          "index": 2,
+          "name": "card_rare",
+          "x": 96,
+          "y": 0,
+          "w": 48,
+          "h": 64,
+          "bounds": {
+            "minX": 3,
+            "minY": 3,
+            "maxX": 44,
+            "maxY": 60,
+            "width": 42,
+            "height": 58
+          }
+        }
+      ]
+    },
+    {
+      "id": "ui_pause",
+      "title": "Pause Button",
+      "file": "ui_pause_spritesheet.png",
+      "frameSize": {
+        "w": 32,
+        "h": 32
+      },
+      "frameCount": 2,
+      "sheetSize": {
+        "w": 64,
+        "h": 32
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "pause_normal",
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 3,
+            "minY": 3,
+            "maxX": 28,
+            "maxY": 28,
+            "width": 26,
+            "height": 26
+          }
+        },
+        {
+          "index": 1,
+          "name": "pause_active",
+          "x": 32,
+          "y": 0,
+          "w": 32,
+          "h": 32,
+          "bounds": {
+            "minX": 3,
+            "minY": 4,
+            "maxX": 28,
+            "maxY": 29,
+            "width": 26,
+            "height": 26
+          }
+        }
+      ]
+    },
+    {
+      "id": "ui_gold_coin",
+      "title": "Gold Coin Spin",
+      "file": "ui_gold_coin_spritesheet.png",
+      "frameSize": {
+        "w": 24,
+        "h": 24
+      },
+      "frameCount": 4,
+      "sheetSize": {
+        "w": 96,
+        "h": 24
+      },
+      "animations": {
+        "spin": {
+          "startFrame": 0,
+          "count": 4,
+          "fps": 8,
+          "loop": true
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "coin_0",
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 5,
+            "minY": 6,
+            "maxX": 18,
+            "maxY": 17,
+            "width": 14,
+            "height": 12
+          }
+        },
+        {
+          "index": 1,
+          "name": "coin_1",
+          "x": 24,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 6,
+            "minY": 6,
+            "maxX": 15,
+            "maxY": 16,
+            "width": 10,
+            "height": 11
+          }
+        },
+        {
+          "index": 2,
+          "name": "coin_2",
+          "x": 48,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 9,
+            "minY": 6,
+            "maxX": 14,
+            "maxY": 16,
+            "width": 6,
+            "height": 11
+          }
+        },
+        {
+          "index": 3,
+          "name": "coin_3",
+          "x": 72,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 6,
+            "minY": 6,
+            "maxX": 15,
+            "maxY": 16,
+            "width": 10,
+            "height": 11
+          }
+        }
+      ]
+    }
+  ]
+}

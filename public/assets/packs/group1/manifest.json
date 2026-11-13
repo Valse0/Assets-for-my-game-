@@ -1,0 +1,719 @@
+{
+  "group": 1,
+  "name": "Enemy Characters (Runner, Spitter, Tank, Boss)",
+  "style": "16-bit bold dark outline, 3/4 view, transparent RGBA, no AA, no gradients",
+  "assets": [
+    {
+      "id": "runner",
+      "title": "Runner Zombie",
+      "file": "runner_spritesheet.png",
+      "frameSize": {
+        "w": 64,
+        "h": 64
+      },
+      "frameCount": 8,
+      "sheetSize": {
+        "w": 512,
+        "h": 64
+      },
+      "footBaselineY": 58,
+      "animations": {
+        "walk": {
+          "startFrame": 0,
+          "count": 4,
+          "fps": 12,
+          "loop": true
+        },
+        "death": {
+          "startFrame": 4,
+          "count": 4,
+          "fps": 9,
+          "loop": false
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "walk_0",
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 21,
+            "minY": 31,
+            "maxX": 43,
+            "maxY": 58,
+            "width": 23,
+            "height": 28
+          }
+        },
+        {
+          "index": 1,
+          "name": "walk_1",
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 24,
+            "minY": 32,
+            "maxX": 42,
+            "maxY": 58,
+            "width": 19,
+            "height": 27
+          }
+        },
+        {
+          "index": 2,
+          "name": "walk_2",
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 21,
+            "minY": 31,
+            "maxX": 42,
+            "maxY": 58,
+            "width": 22,
+            "height": 28
+          }
+        },
+        {
+          "index": 3,
+          "name": "walk_3",
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 24,
+            "minY": 30,
+            "maxX": 43,
+            "maxY": 58,
+            "width": 20,
+            "height": 29
+          }
+        },
+        {
+          "index": 4,
+          "name": "death_0",
+          "x": 256,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 17,
+            "minY": 34,
+            "maxX": 43,
+            "maxY": 58,
+            "width": 27,
+            "height": 25
+          }
+        },
+        {
+          "index": 5,
+          "name": "death_1",
+          "x": 320,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 16,
+            "minY": 38,
+            "maxX": 40,
+            "maxY": 58,
+            "width": 25,
+            "height": 21
+          }
+        },
+        {
+          "index": 6,
+          "name": "death_2",
+          "x": 384,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 16,
+            "minY": 47,
+            "maxX": 48,
+            "maxY": 58,
+            "width": 33,
+            "height": 12
+          }
+        },
+        {
+          "index": 7,
+          "name": "death_3",
+          "x": 448,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 12,
+            "minY": 49,
+            "maxX": 53,
+            "maxY": 58,
+            "width": 42,
+            "height": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "spitter",
+      "title": "Spitter Zombie",
+      "file": "spitter_spritesheet.png",
+      "frameSize": {
+        "w": 64,
+        "h": 64
+      },
+      "frameCount": 10,
+      "sheetSize": {
+        "w": 640,
+        "h": 64
+      },
+      "footBaselineY": 58,
+      "animations": {
+        "walk": {
+          "startFrame": 0,
+          "count": 4,
+          "fps": 8,
+          "loop": true
+        },
+        "attack": {
+          "startFrame": 4,
+          "count": 2,
+          "fps": 8,
+          "loop": false
+        },
+        "death": {
+          "startFrame": 6,
+          "count": 4,
+          "fps": 8,
+          "loop": false
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "walk_0",
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 21,
+            "minY": 24,
+            "maxX": 41,
+            "maxY": 58,
+            "width": 21,
+            "height": 35
+          }
+        },
+        {
+          "index": 1,
+          "name": "walk_1",
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 23,
+            "minY": 25,
+            "maxX": 41,
+            "maxY": 58,
+            "width": 19,
+            "height": 34
+          }
+        },
+        {
+          "index": 2,
+          "name": "walk_2",
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 23,
+            "minY": 24,
+            "maxX": 41,
+            "maxY": 58,
+            "width": 19,
+            "height": 35
+          }
+        },
+        {
+          "index": 3,
+          "name": "walk_3",
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 23,
+            "minY": 23,
+            "maxX": 41,
+            "maxY": 58,
+            "width": 19,
+            "height": 36
+          }
+        },
+        {
+          "index": 4,
+          "name": "attack_0",
+          "x": 256,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 19,
+            "minY": 23,
+            "maxX": 38,
+            "maxY": 58,
+            "width": 20,
+            "height": 36
+          }
+        },
+        {
+          "index": 5,
+          "name": "attack_1",
+          "x": 320,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 21,
+            "minY": 24,
+            "maxX": 45,
+            "maxY": 58,
+            "width": 25,
+            "height": 35
+          }
+        },
+        {
+          "index": 6,
+          "name": "death_0",
+          "x": 384,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 17,
+            "minY": 31,
+            "maxX": 42,
+            "maxY": 58,
+            "width": 26,
+            "height": 28
+          }
+        },
+        {
+          "index": 7,
+          "name": "death_1",
+          "x": 448,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 16,
+            "minY": 37,
+            "maxX": 41,
+            "maxY": 58,
+            "width": 26,
+            "height": 22
+          }
+        },
+        {
+          "index": 8,
+          "name": "death_2",
+          "x": 512,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 15,
+            "minY": 47,
+            "maxX": 48,
+            "maxY": 58,
+            "width": 34,
+            "height": 12
+          }
+        },
+        {
+          "index": 9,
+          "name": "death_3",
+          "x": 576,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 11,
+            "minY": 49,
+            "maxX": 54,
+            "maxY": 58,
+            "width": 44,
+            "height": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "tank",
+      "title": "Tank Zombie (Armored Riot)",
+      "file": "tank_spritesheet.png",
+      "frameSize": {
+        "w": 64,
+        "h": 64
+      },
+      "frameCount": 8,
+      "sheetSize": {
+        "w": 512,
+        "h": 64
+      },
+      "footBaselineY": 58,
+      "animations": {
+        "walk": {
+          "startFrame": 0,
+          "count": 4,
+          "fps": 6,
+          "loop": true
+        },
+        "death": {
+          "startFrame": 4,
+          "count": 4,
+          "fps": 8,
+          "loop": false
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "walk_0",
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 13,
+            "minY": 15,
+            "maxX": 49,
+            "maxY": 58,
+            "width": 37,
+            "height": 44
+          }
+        },
+        {
+          "index": 1,
+          "name": "walk_1",
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 15,
+            "minY": 16,
+            "maxX": 49,
+            "maxY": 58,
+            "width": 35,
+            "height": 43
+          }
+        },
+        {
+          "index": 2,
+          "name": "walk_2",
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 16,
+            "minY": 15,
+            "maxX": 49,
+            "maxY": 58,
+            "width": 34,
+            "height": 44
+          }
+        },
+        {
+          "index": 3,
+          "name": "walk_3",
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 15,
+            "minY": 14,
+            "maxX": 49,
+            "maxY": 58,
+            "width": 35,
+            "height": 45
+          }
+        },
+        {
+          "index": 4,
+          "name": "death_0",
+          "x": 256,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 13,
+            "minY": 26,
+            "maxX": 48,
+            "maxY": 58,
+            "width": 36,
+            "height": 33
+          }
+        },
+        {
+          "index": 5,
+          "name": "death_1",
+          "x": 320,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 13,
+            "minY": 35,
+            "maxX": 46,
+            "maxY": 58,
+            "width": 34,
+            "height": 24
+          }
+        },
+        {
+          "index": 6,
+          "name": "death_2",
+          "x": 384,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 13,
+            "minY": 47,
+            "maxX": 51,
+            "maxY": 58,
+            "width": 39,
+            "height": 12
+          }
+        },
+        {
+          "index": 7,
+          "name": "death_3",
+          "x": 448,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "bounds": {
+            "minX": 9,
+            "minY": 48,
+            "maxX": 56,
+            "maxY": 58,
+            "width": 48,
+            "height": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": "boss",
+      "title": "Boss Mutant Brute",
+      "file": "boss_spritesheet.png",
+      "frameSize": {
+        "w": 96,
+        "h": 96
+      },
+      "frameCount": 10,
+      "sheetSize": {
+        "w": 960,
+        "h": 96
+      },
+      "footBaselineY": 88,
+      "animations": {
+        "walk": {
+          "startFrame": 0,
+          "count": 4,
+          "fps": 6,
+          "loop": true
+        },
+        "attack": {
+          "startFrame": 4,
+          "count": 2,
+          "fps": 7,
+          "loop": false
+        },
+        "death": {
+          "startFrame": 6,
+          "count": 4,
+          "fps": 7,
+          "loop": false
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "walk_0",
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 17,
+            "minY": 23,
+            "maxX": 89,
+            "maxY": 88,
+            "width": 73,
+            "height": 66
+          }
+        },
+        {
+          "index": 1,
+          "name": "walk_1",
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 21,
+            "minY": 25,
+            "maxX": 85,
+            "maxY": 88,
+            "width": 65,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "name": "walk_2",
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 25,
+            "minY": 23,
+            "maxX": 85,
+            "maxY": 88,
+            "width": 61,
+            "height": 66
+          }
+        },
+        {
+          "index": 3,
+          "name": "walk_3",
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 21,
+            "minY": 21,
+            "maxX": 89,
+            "maxY": 88,
+            "width": 69,
+            "height": 68
+          }
+        },
+        {
+          "index": 4,
+          "name": "attack_0",
+          "x": 384,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 21,
+            "minY": 19,
+            "maxX": 85,
+            "maxY": 88,
+            "width": 65,
+            "height": 70
+          }
+        },
+        {
+          "index": 5,
+          "name": "attack_1",
+          "x": 480,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 25,
+            "minY": 27,
+            "maxX": 91,
+            "maxY": 88,
+            "width": 67,
+            "height": 62
+          }
+        },
+        {
+          "index": 6,
+          "name": "death_0",
+          "x": 576,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 17,
+            "minY": 19,
+            "maxX": 81,
+            "maxY": 88,
+            "width": 65,
+            "height": 70
+          }
+        },
+        {
+          "index": 7,
+          "name": "death_1",
+          "x": 672,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 15,
+            "minY": 39,
+            "maxX": 79,
+            "maxY": 87,
+            "width": 65,
+            "height": 49
+          }
+        },
+        {
+          "index": 8,
+          "name": "death_2",
+          "x": 768,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 12,
+            "minY": 50,
+            "maxX": 88,
+            "maxY": 88,
+            "width": 77,
+            "height": 39
+          }
+        },
+        {
+          "index": 9,
+          "name": "death_3",
+          "x": 864,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 10,
+            "minY": 61,
+            "maxX": 92,
+            "maxY": 88,
+            "width": 83,
+            "height": 28
+          }
+        }
+      ]
+    }
+  ]
+}

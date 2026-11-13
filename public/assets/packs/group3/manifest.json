@@ -1,0 +1,351 @@
+{
+  "group": 3,
+  "name": "Environment Tiles & World Props",
+  "style": "16-bit bold dark outline, 3/4 view, no AA, no gradients",
+  "assets": [
+    {
+      "id": "grass_tiles",
+      "title": "Grass Tile Variations",
+      "file": "grass_tiles_spritesheet.png",
+      "frameSize": {
+        "w": 32,
+        "h": 32
+      },
+      "frameCount": 4,
+      "sheetSize": {
+        "w": 128,
+        "h": 32
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "grass_0",
+          "x": 0,
+          "y": 0,
+          "w": 32,
+          "h": 32
+        },
+        {
+          "index": 1,
+          "name": "grass_1",
+          "x": 32,
+          "y": 0,
+          "w": 32,
+          "h": 32
+        },
+        {
+          "index": 2,
+          "name": "grass_2",
+          "x": 64,
+          "y": 0,
+          "w": 32,
+          "h": 32
+        },
+        {
+          "index": 3,
+          "name": "grass_3",
+          "x": 96,
+          "y": 0,
+          "w": 32,
+          "h": 32
+        }
+      ]
+    },
+    {
+      "id": "crate",
+      "title": "Wooden Supply Crate",
+      "file": "crate_spritesheet.png",
+      "frameSize": {
+        "w": 48,
+        "h": 48
+      },
+      "frameCount": 2,
+      "sheetSize": {
+        "w": 96,
+        "h": 48
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "crate_intact",
+          "x": 0,
+          "y": 0,
+          "w": 48,
+          "h": 48,
+          "bounds": {
+            "minX": 7,
+            "minY": 7,
+            "maxX": 40,
+            "maxY": 40,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "index": 1,
+          "name": "crate_damaged",
+          "x": 48,
+          "y": 0,
+          "w": 48,
+          "h": 48,
+          "bounds": {
+            "minX": 7,
+            "minY": 7,
+            "maxX": 40,
+            "maxY": 40,
+            "width": 34,
+            "height": 34
+          }
+        }
+      ]
+    },
+    {
+      "id": "barrel",
+      "title": "Explosive Red Barrel",
+      "file": "barrel_spritesheet.png",
+      "frameSize": {
+        "w": 48,
+        "h": 48
+      },
+      "frameCount": 2,
+      "sheetSize": {
+        "w": 96,
+        "h": 48
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "barrel_intact",
+          "x": 0,
+          "y": 0,
+          "w": 48,
+          "h": 48,
+          "bounds": {
+            "minX": 13,
+            "minY": 7,
+            "maxX": 35,
+            "maxY": 42,
+            "width": 23,
+            "height": 36
+          }
+        },
+        {
+          "index": 1,
+          "name": "barrel_warning",
+          "x": 48,
+          "y": 0,
+          "w": 48,
+          "h": 48,
+          "bounds": {
+            "minX": 13,
+            "minY": 7,
+            "maxX": 35,
+            "maxY": 42,
+            "width": 23,
+            "height": 36
+          }
+        }
+      ]
+    },
+    {
+      "id": "rock",
+      "title": "Stone Boulders",
+      "file": "rock_spritesheet.png",
+      "frameSize": {
+        "w": 48,
+        "h": 48
+      },
+      "frameCount": 3,
+      "sheetSize": {
+        "w": 144,
+        "h": 48
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "rock_0",
+          "x": 0,
+          "y": 0,
+          "w": 48,
+          "h": 48,
+          "bounds": {
+            "minX": 9,
+            "minY": 16,
+            "maxX": 39,
+            "maxY": 39,
+            "width": 31,
+            "height": 24
+          }
+        },
+        {
+          "index": 1,
+          "name": "rock_1",
+          "x": 48,
+          "y": 0,
+          "w": 48,
+          "h": 48,
+          "bounds": {
+            "minX": 6,
+            "minY": 19,
+            "maxX": 41,
+            "maxY": 39,
+            "width": 36,
+            "height": 21
+          }
+        },
+        {
+          "index": 2,
+          "name": "rock_2",
+          "x": 96,
+          "y": 0,
+          "w": 48,
+          "h": 48,
+          "bounds": {
+            "minX": 12,
+            "minY": 13,
+            "maxX": 36,
+            "maxY": 40,
+            "width": 25,
+            "height": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": "tree",
+      "title": "Forest Tree Canopy",
+      "file": "tree_spritesheet.png",
+      "frameSize": {
+        "w": 96,
+        "h": 96
+      },
+      "frameCount": 2,
+      "sheetSize": {
+        "w": 192,
+        "h": 96
+      },
+      "animations": {
+        "sway": {
+          "startFrame": 0,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        }
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "tree_0",
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 17,
+            "minY": 11,
+            "maxX": 79,
+            "maxY": 86,
+            "width": 63,
+            "height": 76
+          }
+        },
+        {
+          "index": 1,
+          "name": "tree_1",
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 96,
+          "bounds": {
+            "minX": 18,
+            "minY": 11,
+            "maxX": 80,
+            "maxY": 86,
+            "width": 63,
+            "height": 76
+          }
+        }
+      ]
+    },
+    {
+      "id": "flowers",
+      "title": "Wildflowers",
+      "file": "flowers_spritesheet.png",
+      "frameSize": {
+        "w": 24,
+        "h": 24
+      },
+      "frameCount": 4,
+      "sheetSize": {
+        "w": 96,
+        "h": 24
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "flower_0",
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 7,
+            "minY": 7,
+            "maxX": 14,
+            "maxY": 15,
+            "width": 8,
+            "height": 9
+          }
+        },
+        {
+          "index": 1,
+          "name": "flower_1",
+          "x": 24,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 7,
+            "minY": 7,
+            "maxX": 14,
+            "maxY": 15,
+            "width": 8,
+            "height": 9
+          }
+        },
+        {
+          "index": 2,
+          "name": "flower_2",
+          "x": 48,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 7,
+            "minY": 8,
+            "maxX": 16,
+            "maxY": 15,
+            "width": 10,
+            "height": 8
+          }
+        },
+        {
+          "index": 3,
+          "name": "flower_3",
+          "x": 72,
+          "y": 0,
+          "w": 24,
+          "h": 24,
+          "bounds": {
+            "minX": 8,
+            "minY": 8,
+            "maxX": 13,
+            "maxY": 14,
+            "width": 6,
+            "height": 7
+          }
+        }
+      ]
+    }
+  ]
+}

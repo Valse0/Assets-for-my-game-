@@ -1,0 +1,6 @@
+{
+  "name": "Survivors 16-Bit Sprite Studio",
+  "description": "64x64 transparent 16-bit pixel-art sprite sheets and animation inspector for Survivors-like mobile games.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
