@@ -1,0 +1,264 @@
+/* ==========================================================================
+   FIVEMORE UI v3 — In-Game HUD (<= 15% screen area, 100dvh, safe-area)
+   Driven by CSS custom properties (--hp, --xp) and data-* attributes.
+   Preserves required IDs: #hp-label, #pause-game, #game-canvas, #virtual-stick.
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--c-bg, #161210);
+  color: var(--c-ink, #efe0c8);
+  font-family: var(--font-body, "Patrick Hand", sans-serif);
+  overscroll-behavior: none;
+}
+
+.game-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--c-bg, #161210);
+  touch-action: none;
+}
+
+#game-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* HUD Container — capped well below 15% of mobile viewport */
+.game-hud {
+  --hp: 76;
+  --xp: 64;
+  position: absolute;
+  z-index: 4;
+  top: max(10px, env(safe-area-inset-top));
+  left: max(10px, env(safe-area-inset-left));
+  width: min(64vw, 248px);
+  display: grid;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.hud-panel {
+  display: grid;
+  gap: 5px;
+  padding: 6px 8px;
+  background: rgba(18, 14, 12, 0.9);
+  border: 2px solid var(--c-outline, #0a090d);
+  box-shadow:
+    inset 0 0 0 1px var(--c-rim, #594131),
+    0 3px 0 var(--c-outline, #0a090d);
+}
+
+:root[data-theme="dust"] .hud-panel {
+  background: rgba(24, 20, 15, 0.9);
+}
+
+:root[data-theme="night"] .hud-panel {
+  background: rgba(12, 18, 25, 0.9);
+}
+
+.hud-row {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  align-items: center;
+  gap: 7px;
+}
+
+.hud-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-pixel, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-ink, #efe0c8);
+  text-shadow: 1px 1px 0 var(--c-outline, #0a090d);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.hud-heart-icon {
+  width: 13px;
+  height: 11px;
+  flex-shrink: 0;
+  color: var(--c-hp-top, #d45340);
+}
+
+.lv-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  padding: 2px 6px;
+  background: var(--c-bg, #161210);
+  border: 1px solid var(--c-rim, #594131);
+  box-shadow: 0 1px 0 var(--c-outline, #0a090d);
+  color: var(--c-xp-top, #9dc284);
+  font-family: var(--font-pixel, monospace);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Segmented pixel meter tracks */
+.meter-track {
+  position: relative;
+  height: 11px;
+  overflow: hidden;
+  border: 2px solid var(--c-outline, #0a090d);
+  background: #0c0908;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.75);
+}
+
+.meter-fill {
+  display: block;
+  height: 100%;
+  transition: width 120ms linear;
+}
+
+.hp-fill {
+  width: calc(clamp(0, var(--hp, 100), 100) * 1%);
+  background: linear-gradient(180deg, var(--c-hp-top, #d45340) 0%, var(--c-hp-bot, #9b2e23) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 224, 204, 0.32);
+}
+
+.xp-track {
+  height: 9px;
+}
+
+.xp-fill {
+  width: calc(clamp(0, var(--xp, 0), 100) * 1%);
+  background: linear-gradient(180deg, var(--c-xp-top, #9dc284) 0%, var(--c-xp-bot, #6c8f58) 100%);
+  box-shadow: inset 0 1px 0 rgba(236, 255, 224, 0.28);
+}
+
+/* Crisp pixel notch dividers over both bars */
+.meter-track::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 12px,
+    rgba(10, 9, 13, 0.82) 12px 14px
+  );
+  pointer-events: none;
+}
+
+/* Timer + 6-digit Score row directly under status panel */
+.hud-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  background: rgba(18, 14, 12, 0.9);
+  border: 2px solid var(--c-outline, #0a090d);
+  box-shadow:
+    inset 0 0 0 1px var(--c-rim, #594131),
+    0 3px 0 var(--c-outline, #0a090d);
+  font-family: var(--font-pixel, monospace);
+  font-weight: 700;
+  line-height: 1.1;
+  text-shadow: 1px 1px 0 var(--c-outline, #0a090d);
+  font-variant-numeric: tabular-nums;
+}
+
+:root[data-theme="dust"] .hud-box {
+  background: rgba(24, 20, 15, 0.9);
+}
+
+:root[data-theme="night"] .hud-box {
+  background: rgba(12, 18, 25, 0.9);
+}
+
+.run-timer {
+  min-width: 58px;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--c-signal, #e3a349);
+  letter-spacing: 0.05em;
+}
+
+.run-score-box {
+  font-size: 10px;
+  color: var(--c-ink, #efe0c8);
+  letter-spacing: 0.06em;
+}
+
+.run-score-label {
+  color: var(--c-muted, #a7937c);
+  font-size: 8px;
+}
+
+/* Top-right Pause Button (#pause-game) */
+.pause-button {
+  position: absolute;
+  z-index: 4;
+  top: max(10px, env(safe-area-inset-top));
+  right: max(10px, env(safe-area-inset-right));
+}
+
+.pause-glyph {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pause-glyph i {
+  display: block;
+  width: 4px;
+  height: 16px;
+  background: var(--c-ink, #efe0c8);
+  border: 1px solid var(--c-outline, #0a090d);
+}
+
+/* Floating Joystick (#virtual-stick) */
+.virtual-stick {
+  position: absolute;
+  z-index: 3;
+  left: 22%;
+  bottom: 18%;
+  width: 96px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  border: 2px solid rgba(239, 224, 200, 0.34);
+  border-radius: 50%;
+  background: rgba(10, 9, 13, 0.22);
+  pointer-events: none;
+  transform: translate(-50%, 50%);
+}
+
+.virtual-stick-knob {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--c-outline, #0a090d);
+  border-radius: 50%;
+  background: rgba(227, 163, 73, 0.56);
+}

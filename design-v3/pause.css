@@ -1,0 +1,97 @@
+/* ==========================================================================
+   FIVEMORE UI v3 — Pause Overlay (pause.html + pause.css)
+   Dark-gothic framed modal over canvas + atmosphere layer.
+   ========================================================================== */
+
+.pause-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+  background: rgba(8, 7, 10, 0.8);
+}
+
+.pause-panel {
+  position: relative;
+  width: min(100%, 350px);
+  padding: 26px 20px 22px;
+  border: 3px solid var(--c-outline, #0a090d);
+  background:
+    radial-gradient(circle at 12% 16%, rgba(255, 240, 210, 0.05) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 88% 82%, rgba(10, 9, 13, 0.45) 0 1.5px, transparent 2px),
+    linear-gradient(180deg, var(--c-panel-alt, #2b2019) 0%, var(--c-panel, #211914) 100%);
+  box-shadow:
+    inset 0 0 0 1px var(--c-rim, #594131),
+    0 8px 0 var(--c-outline, #0a090d),
+    0 18px 36px rgba(0, 0, 0, 0.78);
+  text-align: center;
+}
+
+.pause-panel::before,
+.pause-panel::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--c-rim, #594131);
+  border: 1px solid var(--c-outline, #0a090d);
+}
+
+.pause-panel::before {
+  left: 8px;
+}
+
+.pause-panel::after {
+  right: 8px;
+}
+
+.pause-eyebrow {
+  margin: 0 0 4px;
+  font-family: var(--font-pixel, monospace);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--c-muted, #a7937c);
+  text-transform: uppercase;
+}
+
+.pause-title {
+  margin: 0 0 18px;
+  font-family: var(--font-display, "Jolly Lodger", Georgia, serif);
+  font-size: clamp(44px, 12vw, 56px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  color: var(--c-signal, #e3a349);
+  text-shadow: 2px 3px 0 var(--c-outline, #0a090d);
+}
+
+.pause-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.pause-note {
+  margin: 14px 0 0;
+  font-family: var(--font-body, "Patrick Hand", sans-serif);
+  font-size: 14px;
+  color: var(--c-muted, #a7937c);
+}
+
+@media (max-height: 700px) {
+  .pause-panel {
+    padding: 20px 18px 18px;
+  }
+
+  .pause-title {
+    margin-bottom: 14px;
+  }
+
+  .pause-actions {
+    gap: 8px;
+  }
+}

@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Jolly Lodger";
+  src: url("fonts/JollyLodger-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("fonts/PatrickHand-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Silkscreen";
+  src: url("fonts/Silkscreen-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Silkscreen";
+  src: url("fonts/Silkscreen-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   FIVEMORE UI v3 — Theme Tokens & Atmospheric Overlay (DUSK / DUST / NIGHT)
+   Each theme strictly stays within <= 16 curated colors + #0a090d ink outline.
+   ========================================================================== */
+
+:root,
+:root[data-theme="dusk"] {
+  color-scheme: dark;
+  --font-display: "Jolly Lodger", Georgia, serif;
+  --font-body: "Patrick Hand", "Arial", sans-serif;
+  --font-pixel: "Silkscreen", ui-monospace, monospace;
+
+  --c-outline: #0a090d;
+  --c-bg: #161210;
+  --c-panel: #211914;
+  --c-panel-alt: #2b2019;
+  --c-rim: #594131;
+  --c-ink: #efe0c8;
+  --c-muted: #a7937c;
+  --c-signal: #e3a349;
+  --c-signal-deep: #c97e2c;
+  --c-signal-ink: #140f0b;
+  --c-slate-top: #262321;
+  --c-slate-bot: #181615;
+  --c-hp-top: #d45340;
+  --c-hp-bot: #9b2e23;
+  --c-xp-top: #9dc284;
+  --c-xp-bot: #6c8f58;
+
+  /* Atmosphere Layer Tokens — DUSK (0:00 Warm Sunset) */
+  --atmo-transition: 3s;
+  --atmo-wash: linear-gradient(180deg, rgba(114, 48, 16, 0.28) 0%, rgba(74, 34, 14, 0.2) 55%, rgba(28, 14, 10, 0.32) 100%);
+  --atmo-tint: rgba(202, 118, 44, 0.48);
+  --atmo-blend: color;
+  --atmo-vignette: radial-gradient(ellipse at 50% 48%, rgba(20, 11, 7, 0.03) 38%, rgba(16, 9, 6, 0.56) 82%, rgba(8, 5, 4, 0.88) 100%);
+}
+
+:root[data-theme="dust"] {
+  --c-outline: #0a090d;
+  --c-bg: #1b1713;
+  --c-panel: #26201a;
+  --c-panel-alt: #322a21;
+  --c-rim: #645643;
+  --c-ink: #ebe0cb;
+  --c-muted: #a89d8a;
+  --c-signal: #e5b05d;
+  --c-signal-deep: #c3873a;
+  --c-signal-ink: #17120c;
+  --c-slate-top: #292622;
+  --c-slate-bot: #1b1916;
+  --c-hp-top: #cf5643;
+  --c-hp-bot: #963226;
+  --c-xp-top: #98b99a;
+  --c-xp-bot: #65886c;
+
+  /* Atmosphere Layer Tokens — DUST (1:40 Dusty Twilight) */
+  --atmo-wash: linear-gradient(180deg, rgba(120, 98, 62, 0.3) 0%, rgba(88, 72, 46, 0.22) 55%, rgba(36, 28, 18, 0.34) 100%);
+  --atmo-tint: rgba(196, 168, 118, 0.62);
+  --atmo-blend: color;
+  --atmo-vignette: radial-gradient(ellipse at 50% 48%, rgba(28, 22, 14, 0.05) 38%, rgba(22, 17, 11, 0.58) 82%, rgba(10, 8, 5, 0.88) 100%);
+}
+
+:root[data-theme="night"] {
+  --c-outline: #0a090d;
+  --c-bg: #0b1016;
+  --c-panel: #131b23;
+  --c-panel-alt: #1b2631;
+  --c-rim: #3d4f5f;
+  --c-ink: #e7e3d5;
+  --c-muted: #8b9aa6;
+  --c-signal: #e3aa55;
+  --c-signal-deep: #be8032;
+  --c-signal-ink: #101419;
+  --c-slate-top: #1c252d;
+  --c-slate-bot: #11171d;
+  --c-hp-top: #c94d3f;
+  --c-hp-bot: #8e2a21;
+  --c-xp-top: #88b8a8;
+  --c-xp-bot: #578578;
+
+  /* Atmosphere Layer Tokens — NIGHT (3:20 Moonlit Night) */
+  --atmo-wash: linear-gradient(180deg, rgba(10, 22, 42, 0.48) 0%, rgba(8, 18, 36, 0.42) 60%, rgba(6, 12, 24, 0.54) 100%);
+  --atmo-tint: rgba(68, 116, 178, 0.64);
+  --atmo-blend: color;
+  --atmo-vignette: radial-gradient(ellipse at 50% 48%, rgba(10, 18, 30, 0.14) 34%, rgba(6, 12, 22, 0.68) 80%, rgba(4, 7, 13, 0.92) 100%);
+}
+
+/* Atmosphere Overlay — placed directly ON TOP of #game-canvas, pointer-events: none */
+.atmosphere-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: var(--atmo-wash);
+  transition: background var(--atmo-transition, 3s) ease;
+}
+
+.atmosphere-layer::before,
+.atmosphere-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: background var(--atmo-transition, 3s) ease, opacity var(--atmo-transition, 3s) ease;
+}
+
+.atmosphere-layer::before {
+  background: var(--atmo-tint);
+  mix-blend-mode: var(--atmo-blend, color);
+}
+
+.atmosphere-layer::after {
+  background: var(--atmo-vignette);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atmosphere-layer,
+  .atmosphere-layer::before,
+  .atmosphere-layer::after {
+    transition-duration: 0.01ms;
+  }
+}

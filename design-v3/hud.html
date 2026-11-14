@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" data-theme="dusk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>FIVEMORE — HUD Preview (v3)</title>
+    <link rel="stylesheet" href="atmosphere.css">
+    <link rel="stylesheet" href="buttons.css">
+    <link rel="stylesheet" href="hud.css">
+  </head>
+  <body>
+    <main class="game-stage">
+      <canvas id="game-canvas" aria-label="Game playfield preview"></canvas>
+      <div class="atmosphere-layer" id="atmosphere-layer" aria-hidden="true"></div>
+
+      <header
+        class="game-hud"
+        id="game-hud"
+        style="--hp: 76; --xp: 64;"
+        data-hp="76"
+        data-xp="64"
+        data-level="7"
+        data-time="2:03"
+        data-score="001840"
+        aria-live="polite"
+      >
+        <div class="hud-panel">
+          <div class="hud-row hp-row">
+            <span class="hud-label">
+              <svg class="hud-heart-icon" viewBox="0 0 12 10" shape-rendering="crispEdges" aria-hidden="true">
+                <path fill="#0a090d" d="M2 0h3v1h2V0h3v1h1v1h1v3h-1v2H9v1H8v1H7v1H5V9H4V8H3V7H1V5H0V2h1V1h1z"/>
+                <path fill="currentColor" d="M2 1h3v1h2V1h3v1h1v3h-1v1H9v1H8v1H7v1H5V8H4V7H3V6H2V5H1V2h1z"/>
+                <rect fill="#f8cbb8" x="2" y="2" width="1" height="2"/>
+              </svg>
+              <span id="hp-label">76 HP</span>
+            </span>
+            <span class="meter-track hp-track" role="progressbar" aria-label="Health" aria-valuemin="0" aria-valuemax="100" aria-valuenow="76">
+              <i class="meter-fill hp-fill" id="hp-fill"></i>
+            </span>
+          </div>
+
+          <div class="hud-row xp-row">
+            <span class="hud-label">
+              <span class="lv-badge" id="level-label">LV 7</span>
+            </span>
+            <span class="meter-track xp-track" role="progressbar" aria-label="Experience" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64">
+              <i class="meter-fill xp-fill" id="xp-fill"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="hud-meta-row">
+          <span class="hud-box run-timer" id="run-timer">2:03</span>
+          <span class="hud-box run-score-box" aria-label="Score">
+            <span class="run-score-label">SCORE</span>
+            <span id="run-score">001840</span>
+          </span>
+        </div>
+      </header>
+
+      <button class="fm-btn fm-btn-icon pause-button" id="pause-game" type="button" aria-label="Pause game">
+        <span class="pause-glyph" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <div class="virtual-stick" id="virtual-stick" aria-hidden="true">
+        <span class="virtual-stick-knob"></span>
+      </div>
+    </main>
+
+    <script>
+      // Preview-only script: reads URL params (?theme=dusk|dust|night&hp=76&xp=64&lv=7&time=2:03&score=001840)
+      // and draws a static crisp pixel ground/actor preview onto #game-canvas.
+      (() => {
+        const params = new URLSearchParams(location.search);
+        const theme = params.get("theme");
+        if (theme === "dusk" || theme === "dust" || theme === "night") {
+          document.documentElement.dataset.theme = theme;
+        }
+        const hud = document.getElementById("game-hud");
+        const hp = params.get("hp");
+        const xp = params.get("xp");
+        const lv = params.get("lv");
+        const time = params.get("time");
+        const score = params.get("score");
+
+        if (hp !== null) {
+          const val = Math.max(0, Math.min(100, Number(hp) || 0));
+          hud.style.setProperty("--hp", String(val));
+          hud.dataset.hp = String(val);
+          document.getElementById("hp-label").textContent = `${Math.ceil(val)} HP`;
+        }
+        if (xp !== null) {
+          const val = Math.max(0, Math.min(100, Number(xp) || 0));
+          hud.style.setProperty("--xp", String(val));
+          hud.dataset.xp = String(val);
+        }
+        if (lv !== null) {
+          hud.dataset.level = lv;
+          document.getElementById("level-label").textContent = `LV ${lv}`;
+        }
+        if (time !== null) {
+          hud.dataset.time = time;
+          document.getElementById("run-timer").textContent = time;
+        }
+        if (score !== null) {
+          const padded = String(score).padStart(6, "0").slice(-6);
+          hud.dataset.score = padded;
+          document.getElementById("run-score").textContent = padded;
+        }
+
+        const canvas = document.getElementById("game-canvas");
+        const ctx = canvas.getContext("2d");
+        function drawPreviewField() {
+          const w = window.innerWidth;
+          const h = window.innerHeight;
+          const dpr = Math.max(1, window.devicePixelRatio || 1);
+          canvas.width = Math.round(w * dpr);
+          canvas.height = Math.round(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          ctx.imageSmoothingEnabled = false;
+
+          // Tiled 32px survival ground preview
+          const tile = 32;
+          for (let y = 0; y < h; y += tile) {
+            for (let x = 0; x < w; x += tile) {
+              const hash = ((x * 73856093) ^ (y * 19349663)) >>> 0;
+              ctx.fillStyle = hash % 5 === 0 ? "#667e3b" : hash % 3 === 0 ? "#708a42" : "#779347";
+              ctx.fillRect(x, y, tile, tile);
+              ctx.fillStyle = "rgba(10,9,13,0.22)";
+              ctx.fillRect(x, y, tile, 1);
+              ctx.fillRect(x, y, 1, tile);
+              if (hash % 4 === 0) {
+                ctx.fillStyle = "#4d612c";
+                ctx.fillRect(x + 10, y + 14, 2, 4);
+                ctx.fillRect(x + 14, y + 16, 2, 2);
+              }
+            }
+          }
+
+          // Sample red barrel + crate + pixel gems + actors for HUD legibility check
+          const cx = Math.round(w * 0.5);
+          const cy = Math.round(h * 0.54);
+
+          // Crate
+          ctx.fillStyle = "#0a090d";
+          ctx.fillRect(cx + 66, cy + 54, 28, 28);
+          ctx.fillStyle = "#a36a35";
+          ctx.fillRect(cx + 68, cy + 56, 24, 24);
+          ctx.fillStyle = "#7a4a22";
+          ctx.fillRect(cx + 71, cy + 59, 18, 18);
+
+          // Red barrel
+          ctx.fillStyle = "#0a090d";
+          ctx.fillRect(cx - 8, cy + 162, 22, 26);
+          ctx.fillStyle = "#b8382c";
+          ctx.fillRect(cx - 6, cy + 164, 18, 22);
+
+          // XP gems
+          [[-64, -74, "#6cc8f5"], [-44, -22, "#6cc8f5"], [52, -48, "#f0b949"], [74, -82, "#6cc8f5"]].forEach(([dx, dy, c]) => {
+            ctx.fillStyle = "#0a090d";
+            ctx.fillRect(cx + dx - 5, cy + dy - 7, 10, 14);
+            ctx.fillStyle = c;
+            ctx.fillRect(cx + dx - 3, cy + dy - 5, 6, 10);
+          });
+
+          // Survivor sprite block (center)
+          ctx.fillStyle = "rgba(10,9,13,0.45)";
+          ctx.fillRect(cx - 10, cy + 14, 20, 6);
+          ctx.fillStyle = "#0a090d";
+          ctx.fillRect(cx - 9, cy - 16, 18, 32);
+          ctx.fillStyle = "#6e3e26";
+          ctx.fillRect(cx - 7, cy - 14, 14, 8);
+          ctx.fillStyle = "#f2c89d";
+          ctx.fillRect(cx - 6, cy - 6, 12, 8);
+          ctx.fillStyle = "#c9382b";
+          ctx.fillRect(cx - 7, cy + 2, 14, 8);
+          ctx.fillStyle = "#2b467a";
+          ctx.fillRect(cx - 6, cy + 10, 12, 4);
+
+          // Sample walkers
+          [[-86, -110], [88, -96], [-96, 86], [92, 92]].forEach(([dx, dy]) => {
+            ctx.fillStyle = "rgba(10,9,13,0.45)";
+            ctx.fillRect(cx + dx - 10, cy + dy + 14, 20, 6);
+            ctx.fillStyle = "#0a090d";
+            ctx.fillRect(cx + dx - 9, cy + dy - 14, 18, 30);
+            ctx.fillStyle = "#88aa7a";
+            ctx.fillRect(cx + dx - 7, cy + dy - 12, 14, 10);
+            ctx.fillStyle = "#c9c4b4";
+            ctx.fillRect(cx + dx - 7, cy + dy - 2, 14, 10);
+            ctx.fillStyle = "#323538";
+            ctx.fillRect(cx + dx - 6, cy + dy + 8, 12, 6);
+          });
+        }
+        drawPreviewField();
+        window.addEventListener("resize", drawPreviewField);
+      })();
+    </script>
+  </body>
+</html>
